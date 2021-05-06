@@ -16,7 +16,7 @@ namespace Registration.Controllers
         //登入
         [Route("api/Login")]
         [HttpPost]
-        public GetLoginResponse Post(Login request)
+        public GetLoginResponse Login(Login request)
         {
             var response = new GetLoginResponse();
             var client = new MongoClient("mongodb://localhost:27017");
@@ -63,11 +63,11 @@ namespace Registration.Controllers
             }
             return response;
         }
-        
+
         //建立成員資料
         [Route("api/member")]
         [HttpPost]
-        public SingnupResponser Post(SignupMember request)
+        public SingnupResponser AddMember(SignupMember request)
         {
             var response = new SingnupResponser();
             MongoClient client = new MongoClient("mongodb://localhost:27017");
@@ -223,9 +223,63 @@ namespace Registration.Controllers
         }
 
         //刪除課程
-        [Route("api/course")]
+        [Route("api/course/{ID}")]
+        [HttpDelete]
+        public DelCourseResponse DelCourse(string id)
+        {
+            var response = new DelCourseResponse();
+            MongoClient client = new MongoClient("mongodb://localhost:27017");
+            MongoDatabaseBase db = client.GetDatabase("ClassProject") as MongoDatabaseBase;
 
+            var Coursecol = db.GetCollection<CourseCollection>("Course");
+            var Coursefilter = Builders<CourseCollection>.Filter;
+            var EqID = Coursefilter.Eq(e => e._id, id);
+            var DelID = Coursecol.DeleteOne(EqID);
 
+            if (DelID.DeletedCount == 0)
+            {
+                response.ok = false;
+                response.errmsg = "無此課程，無法刪除";
+            }
+            return response;
+        }
+    
+        //加選課程
+        [Route("api/Choosecourse")]
+        [HttpPost]
+        public ChooseCourseResponse PostChooseCourse(ChooseCourse request)
+        {
+            var response = new ChooseCourseResponse();
+            MongoClient client = new MongoClient("mongodb://localhost:27017");
+            MongoDatabaseBase db = client.GetDatabase("ClassProject") as MongoDatabaseBase;
+
+            var Coursecol = db.GetCollection<CourseCollection>("Course");
+            var CourseFilter = Builders<CourseCollection>.Filter;
+            var CourseUpdate = Builders<CourseCollection>.Update;
+            var EqCourseID = CourseFilter.Eq(e => e._id, request.CourseID);
+            var FindCourse = Coursecol.Find(EqCourseID).ToListAsync().Result;
+            
+            if(FindCourse.Count() == 0)
+            {
+                response.ok = false;
+                response.errmsg = "無此課程編號";
+                return response;
+            }
+
+            var ChooseUser = new ChooseMember()
+            {
+                student_Name = request.UserName,
+                student_number = request.UserID,
+                s
+            };
+
+            var Pushdata = CourseUpdate.Push(e => e.ChooseList, ChooseUser);
+            Coursecol.UpdateMany(EqCourseID, Pushdata);
+
+            return response;
+                
+            
+        }
 
         //狀態檢查
         [Route("")]
