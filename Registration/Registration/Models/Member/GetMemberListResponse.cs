@@ -24,8 +24,7 @@ namespace Registration.Models
         public string Email { get; set; }
         public string Password { get; set; }
         public string Faculty { get; set; }
-        public string Identity { get; set; }
-        public string States { get; set; }
+        public string Identity { get; set; }        
 
     }
 }

@@ -10,7 +10,5 @@ namespace Registration.Models
         public string CourseID { get; set; }
         public string UserName { get; set; }
         public string UserID { get; set; }
-
-        public List<ChooseMember> ChooseList { get; set; }
     }
 }

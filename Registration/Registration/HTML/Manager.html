@@ -1,0 +1,32 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js" integrity="sha512-3j3VU6WC5rPQB4Ld1jnLV7Kd5xr+cq9avvhwqzbH/taCRNURoeEpoPBK9pDyeukwSxwRPJ8fDgvYXd6SkaZ2TA==" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../CSS/Manager.css" />
+    <title>Manger</title>
+</head>
+<body>
+    <div class="header">
+        <div id="info"></div>
+        <button id="Signout" class="pull-left">登出</button>
+    </div>
+    <div class="ButtonFilter">
+        <button id="MemberBtn">顯示成員資料</button>
+        <button id="SignUpMenberBtn">新增成員資料</button>
+        <button id="DelMemberBtn">刪除成員資料</button>
+        <button id="CourseBtn">顯示課程資料</button>
+        <button id="DelCourseBtn">刪除課程資料</button>
+    </div>
+    <div id="ShowBox">
+    </div>
+    <div id="functionBox">
+    </div>
+    <script src="/JavaScript/Manager.js"></script>
+    <script>
+        $('#info').append('<h5>學號:' + $.cookie('UserID') + '</h5>  <h5>名稱:' + $.cookie('UserName') + '</h5>')
+    </script>
+</body>
+</html>

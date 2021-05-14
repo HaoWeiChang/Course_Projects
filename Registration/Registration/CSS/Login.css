@@ -1,0 +1,11 @@
+﻿.LoginLayout {
+    margin: 0 auto;
+    width: 600px;
+}
+.LoginLayout h1{
+    margin-top:40px;
+}
+.LoginLayout div{    
+    margin-top:20px;
+    margin-bottom:20px
+}

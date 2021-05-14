@@ -5,16 +5,15 @@ using System.Web;
 
 namespace Registration.Models
 {
-    public class ChooseCourseResponse
+    public class DelectChooseResponse
     {
         public bool ok { get; set; }
         public string errmsg { get; set; }
-        public List<Courses> CoursesList { get; set; }
-        public ChooseCourseResponse()
+
+        public DelectChooseResponse()
         {
             this.ok = true;
             this.errmsg = "";
-            this.CoursesList = new List<Courses>();
         }
     }
 }

@@ -5,15 +5,13 @@ using System.Web;
 
 namespace Registration.Models
 {
-    public class SignupMember
+    public class MemberCollection
     {
         public string _id { get; set; }
         public string Name { get; set; }
         public string Email { get; set; }
         public string Password { get; set; }
-        public string Faculty { get; set; }
-        public string Identity { get; set; }
-        public string States { get; set; }
-
-    }
+        public string Faculty { get; set; } 
+        public string Identity { get; set; }         
+    } 
 }

@@ -124,8 +124,19 @@
     <Content Include="Core\Compression\Snappy\lib\win\snappy32.dll" />
     <Content Include="Core\Compression\Snappy\lib\win\snappy64.dll" />
     <Content Include="Core\Compression\Zstandard\lib\win\libzstd.dll" />
+    <Content Include="CSS\Login.css" />
+    <Content Include="CSS\Manager.css" />
+    <Content Include="CSS\Professor.css" />
+    <Content Include="CSS\Student.css" />
     <Content Include="Global.asax" />
-    <Content Include="HtmlPage.html" />
+    <Content Include="HTML\Login.html" />
+    <Content Include="HTML\Manager.html" />
+    <Content Include="HTML\Professor.html" />
+    <Content Include="HTML\Student.html" />
+    <Content Include="JavaScript\Login.js" />
+    <Content Include="JavaScript\Manager.js" />
+    <Content Include="JavaScript\Professor.js" />
+    <Content Include="JavaScript\Student.js" />
     <Content Include="mongocrypt.dll" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -135,20 +146,25 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\AddCourseResponse.cs" />
-    <Compile Include="Models\ChooseCourse.cs" />
-    <Compile Include="Models\ChooseCourseResponse.cs" />
-    <Compile Include="Models\DelCourseResponse.cs" />
-    <Compile Include="Models\DelMemberResponse.cs" />
-    <Compile Include="Models\Login.cs" />
-    <Compile Include="Models\MemberCollection.cs" />
-    <Compile Include="Models\AddCourse.cs" />
-    <Compile Include="Models\CourseCollection.cs" />
-    <Compile Include="Models\GetCourseResponse.cs" />
-    <Compile Include="Models\GetMemberListResponse.cs" />
-    <Compile Include="Models\GetLoginResponse.cs" />
-    <Compile Include="Models\SingnupResponser.cs" />
-    <Compile Include="Models\SignupMember.cs" />
+    <Compile Include="Models\Course\AddCourseResponse.cs" />
+    <Compile Include="Models\Course\ChooseCourse.cs" />
+    <Compile Include="Models\Course\ChooseCourseResponse.cs" />
+    <Compile Include="Models\Course\GetChooseResponse.cs" />
+    <Compile Include="Models\Login\Cookies.cs" />
+    <Compile Include="Models\Login\CookieResponse.cs" />
+    <Compile Include="Models\Course\DelCourseResponse.cs" />
+    <Compile Include="Models\Course\DelectChoose.cs" />
+    <Compile Include="Models\Course\DelectChooseResponse.cs" />
+    <Compile Include="Models\Member\DelMemberResponse.cs" />
+    <Compile Include="Models\Login\LoginMember.cs" />
+    <Compile Include="Models\Member\MemberCollection.cs" />
+    <Compile Include="Models\Course\AddCourse.cs" />
+    <Compile Include="Models\Course\CourseCollection.cs" />
+    <Compile Include="Models\Course\GetCourseResponse.cs" />
+    <Compile Include="Models\Member\GetMemberListResponse.cs" />
+    <Compile Include="Models\Login\GetLoginResponse.cs" />
+    <Compile Include="Models\Member\SingnupResponser.cs" />
+    <Compile Include="Models\Member\SignupMember.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

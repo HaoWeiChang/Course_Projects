@@ -11,13 +11,16 @@ namespace Registration.Models
         public string errmsg { get; set; }
         public string _id { get; set; }    
         public string token { get; set; }
-
+        public string Identity { get; set; }
+        public string Name { get; set; }
         public GetLoginResponse()
         {
             this.ok = true;
             this.errmsg = "";
             this._id = "";
             this.token = "";
+            this.Identity = "";
+            this.Name = "";
         }
     }
 }

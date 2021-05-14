@@ -1,0 +1,28 @@
+﻿.ButtonFilter {
+    margin: 0 auto;
+    width: 1000px;
+}
+
+#ShowBox {
+    margin: 0 auto;
+    width: 1000px;
+    height: 300px;
+    overflow-y: scroll;
+}
+
+#functionBox {
+    margin: 0 auto;
+    width: 1000px;
+    border-style: groove;
+}
+
+.header {
+    text-align: right;
+    background-color: ghostwhite;
+    margin: 0 auto;
+    width: 1000px;
+}
+
+#info h5 {
+    display: inline-block;
+}

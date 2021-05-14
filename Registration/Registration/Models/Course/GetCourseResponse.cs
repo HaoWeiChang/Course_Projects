@@ -25,7 +25,7 @@ namespace Registration.Models
         public string Description { get; set; } //課程內容        
         public string Professor { get; set; } //教授名稱
         public string Periods { get; set; } //課程節數
-        /*public string Count { get; set; }//選課人數*/
+        public int Count { get; set; }//選課人數
         public string Uplimit { get; set; }//上限人數
     }
 }
